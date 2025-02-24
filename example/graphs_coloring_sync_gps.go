@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-
-	"github.com/krzysztof-turowski/distributed-framework/graphs/coloring/sync_goldberg_plotkin_shannon"
+	"github.com/krzysztof-turowski/distributed-framework/graphs/coloring/sync_gps"
 )
 
 const exitFailure = 1
@@ -29,6 +28,6 @@ func main() {
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Invalid p specification")
 	}
-	sync_goldberg_plotkin_shannon.Run(n,p)
+	sync_gps.Run(n,p)
 
 }

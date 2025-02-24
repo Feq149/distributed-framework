@@ -4,20 +4,17 @@ import (
 	"io"
 	"log"
 	"testing"
-	
-
-	"github.com/krzysztof-turowski/distributed-framework/graphs/coloring/sync_goldberg_plotkin_shannon"
+	"github.com/krzysztof-turowski/distributed-framework/graphs/coloring/sync_gps"
 )
 
 func TestGps(t *testing.T) {
 	checkLogOutput()
-	sync_goldberg_plotkin_shannon.Run(100, 0.75)
-
+	sync_gps.Run(100, 0.75)
 }
 
 func BenchmarkGps(b *testing.B) {
 	log.SetOutput(io.Discard)
 	for iteration := 0; iteration < b.N; iteration++ {
-		sync_goldberg_plotkin_shannon.Run(100, 0.75)
+		sync_gps.Run(100, 0.75)
 	}
 }
